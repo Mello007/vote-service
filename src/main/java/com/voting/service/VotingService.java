@@ -35,6 +35,7 @@ public class VotingService {
            vote.setCount(0);
            voteList.add(vote);
         });
+        voting.setStatus(true);
         voting.setVotes(voteList);
         votingRepository.save(voting);
     }

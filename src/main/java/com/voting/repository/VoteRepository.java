@@ -12,8 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 @RepositoryRestResource(collectionResourceRel = "vote", path = "vote")
 public interface VoteRepository extends PagingAndSortingRepository<Vote, Long> {
 
-
-
     @Transactional
     @Modifying
     @Query(value = "UPDATE vote SET count = count+1 WHERE name = ?", nativeQuery = true)
