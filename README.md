@@ -3,15 +3,17 @@
 This is web-application, that able to create different votes.
 
 
-## Getting Started
+## Quick start
 
 ```
+1. You must have postgresql! Download it and create new database. Change
+settings in file: src/main/resources/applications.yaml 
 
-1. Navigate to the folder with project, the next write:
+2. Navigate to the folder with project, the next write:
 
-2. mvn clean package
+3. mvn clean package
 
-3. mvn spring-boot:run
+4. mvn spring-boot:run
 ```
 
 
@@ -24,6 +26,7 @@ This is web-application, that able to create different votes.
 spring boot
 java 8
 maven 3
+postgresql
 ```
 
 ## Author
