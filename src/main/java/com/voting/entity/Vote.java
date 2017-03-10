@@ -10,5 +10,5 @@ import javax.persistence.Table;
 @Getter @Setter
 public class Vote extends BaseEntity {
     private String name;
-    private String count;
+    private Integer count;
 }

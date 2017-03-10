@@ -1,7 +1,8 @@
 # Application "Voting"
 
-This is web-application, that able to create different votes.
-
+This is web-application, that able to:
+1. Create and delete votes
+2. View statistics
 
 ## Quick start
 

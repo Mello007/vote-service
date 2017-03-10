@@ -18,4 +18,5 @@ public interface VotingRepository extends PagingAndSortingRepository<Voting, Lon
     @Modifying
     @Query(value = "DELETE FROM voting", nativeQuery = true)
     void deleteAll();
+
 }

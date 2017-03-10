@@ -5,21 +5,32 @@ function getDataAboutVote() {
     priceRequest.onload = function (item){             //Функция которая отправляет запрос на сервер для получения всех студентов
         var values = JSON.parse(this.responseText);
         document.getElementById('name').innerHTML = values['name'];
-        var votes = values['votes'];
-        var table = document.getElementById('all-items-voting');
-        votes.forEach(function (vote) {
+    };
+    priceRequest.send(null);
+    get(idStructure);
+}
+
+function get(idStructure) {
+    var priceRequest = new XMLHttpRequest();
+    priceRequest.open("GET", "/voting/" + idStructure + "/votes", true);   //Указываем адрес GET-запроса
+    priceRequest.onload = function (){             //Функция которая отправляет запрос на сервер для получения всех студентов
+        var parsedItem = JSON.parse(this.responseText);
+        var itemsTable = document.getElementById('all-items-voting'); //получаем элемент по Id
+        itemsTable.innerHTML = '';      //очищаем таблицу от устаревших данных
+        parsedItem._embedded.vote.forEach(function(item)  {
+            console.log(item);
             var itemNameElement = document.createElement('td'); //создаем элемент ячейку с названием для таблицы
-            itemNameElement.innerHTML =  vote['name'] ;     //внедряем название предмета, полученное с сервера
+            itemNameElement.innerHTML =  item['name'] ;     //внедряем название предмета, полученное с сервера
             var itemPriceElement = document.createElement('td');
-            itemPriceElement.innerHTML = vote['count'];
+            itemPriceElement.innerHTML = item['count'];
             var operations = document.createElement('td');
             operations.innerHTML =
-                '<button class="btn btn-primary btn-xs" onclick="deleteVoting(\'' + item['name'] + '\')">Голосовать</button>';
-            var elementRow = document.createElement('tr');
-            elementRow.appendChild(itemNameElement);    
+                ' <button class="btn btn-primary btn-xs" onclick="addVoteItem(\'' + item['name'] + '\')">Голосовать </button> ';
+            var elementRow = document.createElement('tr'); /// /создаем строку таблицы
+            elementRow.appendChild(itemNameElement);      //помещаем обе ячейки в строку
             elementRow.appendChild(itemPriceElement);
             elementRow.appendChild(operations);
-            table.appendChild(elementRow);
+            itemsTable.appendChild(elementRow);           //помещаем строку в таблицу
         });
     };
     priceRequest.send(null);
@@ -27,17 +38,14 @@ function getDataAboutVote() {
 
 function addVoteItem(name) {
     $.ajax({
-        type: "POST",
-        url: "/vote/add",
-        contentType: "application/json",
-        dataType: 'json',
-        data: name
+        type: "GET",
+        url: "http://localhost:8080/vote/search/addPoint?name=" + name.replace(" ", "%20")
     });
+    location.reload();
 }
 
 
 $(document).ready(function() {
     getDataAboutVote();
-
 });
 

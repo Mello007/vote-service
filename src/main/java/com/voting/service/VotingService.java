@@ -32,7 +32,7 @@ public class VotingService {
         jsonNode.findValue("votes").elements().forEachRemaining(elem -> {
            Vote vote = new Vote();
            vote.setName(elem.textValue());
-           vote.setCount("0");
+           vote.setCount(0);
            voteList.add(vote);
         });
         voting.setVotes(voteList);

@@ -24,6 +24,10 @@ public class VotingController {
 
     @RequestMapping(value = "add", method = RequestMethod.POST, consumes = "application/json")
     public void addStructure(@RequestBody String json) throws Exception {
+//        ObjectMapper mapper = new ObjectMapper();
+//        Map<Object, Object> map = new HashMap<>();
+//        map = mapper.readValue(json, new TypeReference<Map<String, String>>() {});
+
         votingService.addNewVoting(json);
     }
 }

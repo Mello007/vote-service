@@ -13,5 +13,5 @@ import java.util.List;
 public class Voting extends BaseEntity {
     private String name;
     private String link;
-    @ElementCollection private List<Vote> votes;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true) private List<Vote> votes;
 }
