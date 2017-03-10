@@ -1,4 +1,4 @@
-package com.voting;
+package com.voting.controller;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
