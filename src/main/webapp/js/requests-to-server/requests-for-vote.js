@@ -32,6 +32,8 @@ function get(idStructure) {
             elementRow.appendChild(operations);
             itemsTable.appendChild(elementRow);           //помещаем строку в таблицу
         });
+        $('table').filterTable({minRows: 0});
+        $("#all-items-table").tablesorter();
     };
     priceRequest.send(null);
 }
