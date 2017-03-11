@@ -1,16 +1,22 @@
 function getDataAboutVote() {
     var idStructure = window.location.href.split('?')[1];
     var priceRequest = new XMLHttpRequest();
+    var status;
     priceRequest.open("GET", "/voting/" + idStructure, true);   //Указываем адрес GET-запроса
-    priceRequest.onload = function (item){             //Функция которая отправляет запрос на сервер для получения всех студентов
+    priceRequest.onload = function (item){
         var values = JSON.parse(this.responseText);
-        document.getElementById('name').innerHTML = values['name'];
+        status = values['status'];
+        if (status) {
+            document.getElementById('name').innerHTML = values['name'];
+            getDataFromServer(idStructure);
+        } else {
+            document.getElementById('name').innerHTML = 'Голосование закрыто!!!';
+        }
     };
     priceRequest.send(null);
-    get(idStructure);
 }
 
-function get(idStructure) {
+function getDataFromServer(idStructure) {
     var priceRequest = new XMLHttpRequest();
     priceRequest.open("GET", "/voting/" + idStructure + "/votes", true);   //Указываем адрес GET-запроса
     priceRequest.onload = function (){             //Функция которая отправляет запрос на сервер для получения всех студентов
@@ -41,7 +47,7 @@ function get(idStructure) {
 function addVoteItem(name) {
     $.ajax({
         type: "GET",
-        url: "http://localhost:8080/vote/search/addPoint?name=" + name.replace(" ", "%20")
+        url: "/vote/search/addPoint?name=" + name.replace(" ", "%20")
     });
     location.reload();
 }

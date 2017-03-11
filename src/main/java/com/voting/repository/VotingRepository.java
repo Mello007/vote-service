@@ -19,10 +19,22 @@ public interface VotingRepository extends PagingAndSortingRepository<Voting, Lon
     @Query(value = "DELETE FROM voting", nativeQuery = true)
     void deleteAll();
 
-
     @Transactional
     @Modifying
     @Query(value = "UPDATE voting SET status = 0 WHERE name = ?", nativeQuery = true)
-    void setStatus(@Param("name") String name);
+    void setStatusClose(@Param("name") String name);
+
+    @Transactional
+    @Modifying
+    @Query(value = "UPDATE voting SET status = 'T' WHERE name = ?", nativeQuery = true)
+    void setStatusOpen(@Param("name") String name);
+
+
+    @Transactional
+    @Modifying
+    @Query(value = "SELECT * from Vote inner join Voting where Voting.name = ?", nativeQuery = true)
+    void getVotes(@Param("name") String name);
+
+
 
 }

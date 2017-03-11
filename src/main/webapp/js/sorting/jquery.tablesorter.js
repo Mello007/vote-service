@@ -705,7 +705,7 @@
                     this.config.parsers = buildParserCache(this, $headers);
                     // build the cache for the tbody cells
                     cache = buildCache(this);
-                    // get the css class names, could be done else where.
+                    // getDataFromServer the css class names, could be done else where.
                     var sortCSS = [config.cssDesc, config.cssAsc];
                     // fixate columns if the users supplies the fixedWidth option
                     fixColumnWidth(this);
@@ -721,9 +721,9 @@
                             $this.trigger("sortStart");
                             // store exp, for speed
                             var $cell = $(this);
-                            // get current column index
+                            // getDataFromServer current column index
                             var i = this.column;
-                            // get current column sort order
+                            // getDataFromServer current column sort order
                             this.order = this.count++ % 2;
 							// always sort on the locked order.
 							if(this.lockedOrder) this.order = this.lockedOrder;
@@ -796,7 +796,7 @@
                         }, 1);
                     }).bind("updateCell", function (e, cell) {
                         var config = this.config;
-                        // get position from the dom.
+                        // getDataFromServer position from the dom.
                         var pos = [(cell.parentNode.rowIndex - 1), cell.cellIndex];
                         // update cache
                         cache.normalized[pos[0]][pos[1]] = config.parsers[pos[1]].format(

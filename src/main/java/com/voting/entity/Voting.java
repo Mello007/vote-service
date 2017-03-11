@@ -13,7 +13,6 @@ import java.util.List;
 @Getter @Setter
 public class Voting extends BaseEntity {
     private String name;
-    private String link;
     @Type(type="true_false") private Boolean status;
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true) private List<Vote> votes;
 }

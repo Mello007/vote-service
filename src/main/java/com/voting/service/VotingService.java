@@ -26,8 +26,6 @@ public class VotingService {
     public void addNewVoting(String json) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         JsonNode jsonNode = mapper.readTree(json);
-        Voting voting = new Voting();
-        voting.setName(jsonNode.findValue("name").textValue());
         List<Vote> voteList = new ArrayList<>();
         jsonNode.findValue("votes").elements().forEachRemaining(elem -> {
            Vote vote = new Vote();
@@ -35,6 +33,10 @@ public class VotingService {
            vote.setCount(0);
            voteList.add(vote);
         });
+
+
+        Voting voting = new Voting();
+        voting.setName(jsonNode.findValue("name").textValue());
         voting.setStatus(true);
         voting.setVotes(voteList);
         votingRepository.save(voting);

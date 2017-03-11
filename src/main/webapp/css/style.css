@@ -1,3 +1,7 @@
 .choices input {
     margin-bottom: 15px;
 }
+
+.buttons button {
+    margin-right: 10px;
+}

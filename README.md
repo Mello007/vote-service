@@ -2,7 +2,11 @@
 
 This is web-application, that able to:
 1. Create and delete votes
-2. View statistics
+2. Close and open votes
+3. View statistics
+4. Filter results
+5. Search results
+6. Generate link for voting
 
 ## Quick start
 
@@ -25,9 +29,12 @@ settings in file: src/main/resources/applications.yaml
 
 ```
 spring boot
+spring data jpa rest
 java 8
 maven 3
 postgresql
+bootstrap
+jquery
 ```
 
 ## Author
