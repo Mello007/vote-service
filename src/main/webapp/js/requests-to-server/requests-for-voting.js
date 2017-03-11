@@ -21,9 +21,9 @@ function addNewVoting() {
 
 function viewStatistics(pathToServer) {
     $('#stat').modal();
-    var priceRequest = new XMLHttpRequest();
-    priceRequest.open("GET", pathToServer, true);   //Указываем адрес GET-запроса
-    priceRequest.onload = function (){             //Функция которая отправляет запрос на сервер для получения всех студентов
+    var requestToServer = new XMLHttpRequest();
+    requestToServer.open("GET", pathToServer, true);   //Указываем адрес GET-запроса
+    requestToServer.onload = function (){             //Функция которая отправляет запрос на сервер для получения всех студентов
         var parsedItem = JSON.parse(this.responseText);
         var itemsTable = document.getElementById('all-elements-view'); //получаем элемент по Id
         itemsTable.innerHTML = '';      //очищаем таблицу от устаревших данных
@@ -41,7 +41,7 @@ function viewStatistics(pathToServer) {
         $('table').filterTable({minRows: 0});
         $("#view-table").tablesorter();
     };
-    priceRequest.send(null);
+    requestToServer.send(null);
 }
 
 

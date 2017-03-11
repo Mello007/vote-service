@@ -9,18 +9,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityManager;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 @Service
 public class VotingService {
 
 
-    @Autowired VotingRepository votingRepository;
-
+    @Autowired
+    VotingRepository votingRepository;
 
     @Transactional
     public void addNewVoting(String json) throws IOException {
@@ -28,13 +26,11 @@ public class VotingService {
         JsonNode jsonNode = mapper.readTree(json);
         List<Vote> voteList = new ArrayList<>();
         jsonNode.findValue("votes").elements().forEachRemaining(elem -> {
-           Vote vote = new Vote();
-           vote.setName(elem.textValue());
-           vote.setCount(0);
-           voteList.add(vote);
+            Vote vote = new Vote();
+            vote.setName(elem.textValue());
+            vote.setCount(0);
+            voteList.add(vote);
         });
-
-
         Voting voting = new Voting();
         voting.setName(jsonNode.findValue("name").textValue());
         voting.setStatus(true);

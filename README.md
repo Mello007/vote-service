@@ -11,11 +11,12 @@ This is web-application, that able to:
 ## Quick start
 
 ```
-1. You must have postgresql! Download it and create new database. Change
-settings in file: src/main/resources/applications.yaml 
+1. You must have postgresql! Download it and create new database. 
 
-2. Navigate to the folder with project, the next write:
-
+2. Navigate to the folder with project and change
+settings in file: src/main/resources/applications.yaml
+Write: 
+    
 3. mvn clean package
 
 4. mvn spring-boot:run
@@ -32,9 +33,9 @@ spring boot
 spring data jpa rest
 java 8
 maven 3
-postgresql
-bootstrap
-jquery
+postgresql 9.5
+bootstrap 3
+jquery 1.9.1
 ```
 
 ## Author
