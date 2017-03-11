@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script defer src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/requests-to-server/requests-for-voting.js"></script>
+    <script src="js/search/jquery.filtertable.js"></script>
+    <script src="js/sorting/jquery.tablesorter.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <nav class="navbar navbar-default navbar-static">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".js-navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#" style="padding:15px 15px;">Голосовалка!</a>
+            </div>
+            <div class="collapse navbar-collapse js-navbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a onclick="deleteAll()" class="btn" data-toggle="modal">Удалить все</a></li>
+                    <li><a href="#myModal" class="btn" data-toggle="modal">Добавить</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Заголовок модального окна -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Добавить голосование</h4>
+                </div>
+                <!-- Основное содержимое модального окна -->
+                <div class="modal-body">
+                    <form action="javascript:void(null);" id="window">
+                        <p>Название голосования:</p>
+                        <input type="text" class="form-control" id="name">
+                            <p>Варианты ответов:</p>
+                        <div id="parent" class="choices">
+                            <input type="text" class="form-control"/>
+                            <input type="text" class="form-control"/>
+                            <input type="text" class="form-control"/>
+                        </div>
+                        <button class="btn">Добавить новое поле</button>
+                        <button type="submit" onclick="addNewVoting()" class="btn">Добавить голосование</button>
+                    </form>
+                </div>
+                <!-- Футер модального окна -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <table class="table table-striped" id="all-items-table">
+        <thead>
+        <tr>
+            <th class="hand-th">Название голосования</th>
+            <th class="hand-th">Ссылка</th>
+            <th class="hand-th">Действия</th>
+        </tr>
+        </thead>
+        <tbody id="all-items">
+        </tbody>
+
+    </table>
+</div>
+</body>
+</html>
