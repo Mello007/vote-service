@@ -1,13 +1,14 @@
 # Application "Voting"
 
 This is web-application, that able to:
+```
 1. Create and delete votes
 2. Close and open votes
 3. View statistics
 4. Filter results
 5. Search results
 6. Generate link for voting
-
+```
 
 ## Quick start
 
@@ -42,7 +43,8 @@ jquery 1.9.1
 
 ### Screenshots
 
-1. Add new voting
+1. Add new voting:
+
 ![Alt text](https://raw.githubusercontent.com/Mello007/vote-service/master/screenshots/add%20new%20voting.png "Without sort")
 
 2. View added voting:
@@ -54,13 +56,21 @@ jquery 1.9.1
 ![Alt text](https://raw.githubusercontent.com/Mello007/vote-service/master/screenshots/view%20statisctics.png "Without sort")
 
 
-Without sort:
+4. Without sort:
 ![Alt text](https://raw.githubusercontent.com/Mello007/vote-service/master/screenshots/without%20sort.png "Without sort")
 
-After sort:
+5. After sort:
 
 ![Alt text](https://raw.githubusercontent.com/Mello007/vote-service/master/screenshots/after%20sort.png "Without sort")
 
+6. Close voting
+
+![Alt text](https://raw.githubusercontent.com/Mello007/vote-service/master/screenshots/close%20voting.png "Without sort")
+
+
+7. What's wrong when voting is closed
+
+![Alt text](https://raw.githubusercontent.com/Mello007/vote-service/master/screenshots/whats%20wrong%20when%20voting%20is%20closed.png "Without sort")
 
 ## Author
 
