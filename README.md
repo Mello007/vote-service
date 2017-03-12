@@ -7,18 +7,17 @@ This is web-application, that able to:
 3. View statistics
 4. Filter results
 5. Search results
-6. Generate link for voting
+6. Generate link for the voting
 ```
 
 ## Quick start
 
 ```
-1. You must have postgresql! Download it and create new database. 
+1. You must have postgresql! Download it (version 9.5 or later) and create new database. 
 
-2. Navigate to the folder with project and change
-settings in file: src/main/resources/applications.yaml
-Write: 
-    
+2. Change the settings in file: src/main/resources/applications.yaml
+In terminal, Navigate to the folder with project and write: 
+
 3. mvn clean package
 
 4. mvn spring-boot:run
@@ -57,6 +56,7 @@ jquery 1.9.1
 
 
 4. Without sort:
+
 ![Alt text](https://raw.githubusercontent.com/Mello007/vote-service/master/screenshots/without%20sort.png "Without sort")
 
 5. After sort:
