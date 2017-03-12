@@ -3,9 +3,9 @@ spring:
         name: students
     datasource:
         driverClassName: org.postgresql.Driver
-        url: jdbc:postgresql://localhost:5432/votes
-        username: postgres
-        password: 55164937
+        url: jdbc:postgresql://localhost:5432/*******
+        username: *******
+        password: *******
     jpa:
       hibernate:
         ddl-auto: update
