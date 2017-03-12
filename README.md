@@ -53,7 +53,7 @@ jquery 1.9.1
 
 3. View statistics:
 
-![Alt text](https://raw.githubusercontent.com/Mello007/vote-service/master/screenshots/view%20statisctics.png "Without sort")
+![Alt text](https://raw.githubusercontent.com/Mello007/vote-service/master/screenshots/view%20statistics.png "Without sort")
 
 
 4. Without sort:
