@@ -9,8 +9,5 @@ import javax.persistence.*;
 @Setter
 @MappedSuperclass
 public class BaseEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column
-    protected Long id;
+    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE) @Column protected Long id;
 }

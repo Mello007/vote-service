@@ -20,6 +20,10 @@ public class VotingService {
     @Autowired
     VotingRepository votingRepository;
 
+    /**
+     * @param json - special json from frontend, that contains Voting and Votes.
+     * @throws IOException
+     */
     @Transactional
     public void addNewVoting(String json) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
