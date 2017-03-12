@@ -28,7 +28,6 @@ function viewStatistics(pathToServer) {
         var itemsTable = document.getElementById('all-elements-view'); //получаем элемент по Id
         itemsTable.innerHTML = '';      //очищаем таблицу от устаревших данных
         parsedItem._embedded.vote.forEach(function(item)  {
-            console.log(item);
             var name = document.createElement('td'); //создаем элемент ячейку с названием для таблицы
             name.innerHTML =  item['name'] ;     //внедряем название предмета, полученное с сервера
             var count = document.createElement('td');
